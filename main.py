@@ -58,11 +58,11 @@ class Downloader(QWidget):
             with open(self.temp_file_path, 'w') as file:
                 file.write(folder_path)
 
-    def sample(self):
-        yt = YouTube('http://youtube.com/watch?v=2lAe1cqCOXo')
-        yd = yt.streams.filter(only_audio=True)
-        print(yd)
-        yd.download(r'C:\Users\XBOPb\Desktop\New folder')
+    # def sample(self):
+    #     yt = YouTube('http://youtube.com/watch?v=2lAe1cqCOXo')
+    #     yd = yt.streams.filter(only_audio=True)
+    #     print(yd)
+    #     yd.download(r'C:\Users\XBOPb\Desktop\New folder')
 
     
 if __name__ == "__main__":
@@ -71,3 +71,4 @@ if __name__ == "__main__":
     Form = Downloader()
     Form.show()
     sys.exit(app.exec())
+
