@@ -63,7 +63,6 @@ class Downloader(QWidget):
     #     yd = yt.streams.filter(only_audio=True)
     #     print(yd)
     #     yd.download(r'C:\Users\XBOPb\Desktop\New folder')
-
     
 if __name__ == "__main__":
     import sys
