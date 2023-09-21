@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(437, 372)
+        Form.resize(546, 496)
         self.gridLayout = QtWidgets.QGridLayout(Form)
         self.gridLayout.setObjectName("gridLayout")
         self.main_layout = QtWidgets.QVBoxLayout()
@@ -46,6 +46,24 @@ class Ui_Form(object):
         self.audio_download = QtWidgets.QPushButton(parent=Form)
         self.audio_download.setObjectName("audio_download")
         self.main_layout.addWidget(self.audio_download)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetFixedSize)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.download_label = QtWidgets.QLabel(parent=Form)
+        self.download_label.setMaximumSize(QtCore.QSize(16777215, 20))
+        self.download_label.setObjectName("download_label")
+        self.horizontalLayout_2.addWidget(self.download_label)
+        self.download_folder = QtWidgets.QLabel(parent=Form)
+        self.download_folder.setText("")
+        self.download_folder.setObjectName("download_folder")
+        self.horizontalLayout_2.addWidget(self.download_folder)
+        self.horizontalLayout_2.setStretch(0, 1)
+        self.horizontalLayout_2.setStretch(1, 2)
+        self.main_layout.addLayout(self.horizontalLayout_2)
+        self.change_folder = QtWidgets.QPushButton(parent=Form)
+        self.change_folder.setObjectName("change_folder")
+        self.main_layout.addWidget(self.change_folder)
+        self.main_layout.setStretch(2, 1)
         self.gridLayout.addLayout(self.main_layout, 0, 0, 1, 1)
 
         self.retranslateUi(Form)
@@ -62,6 +80,8 @@ class Ui_Form(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:13pt;\"><br /></p></body></html>"))
         self.video_download.setText(_translate("Form", "Download Video"))
         self.audio_download.setText(_translate("Form", "Download Audio"))
+        self.download_label.setText(_translate("Form", "Download Folder:"))
+        self.change_folder.setText(_translate("Form", "Change Download Folder"))
 
 
 if __name__ == "__main__":

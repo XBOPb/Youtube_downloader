@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>437</width>
-    <height>372</height>
+    <width>546</width>
+    <height>496</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="main_layout">
+    <layout class="QVBoxLayout" name="main_layout" stretch="0,0,1,0,0,0,0">
      <item alignment="Qt::AlignHCenter">
       <widget class="QLabel" name="header">
        <property name="sizePolicy">
@@ -77,6 +77,40 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="audio_download">
        <property name="text">
         <string>Download Audio</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <item>
+        <widget class="QLabel" name="download_label">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Download Folder:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="download_folder">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="change_folder">
+       <property name="text">
+        <string>Change Download Folder</string>
        </property>
       </widget>
      </item>
