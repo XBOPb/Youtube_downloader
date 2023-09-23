@@ -17,6 +17,8 @@ class Downloader(QWidget):
         self.get_latest_folder()
         self.ui.link_field.textChanged.connect(self.request_preview)
         self.ui.change_folder.clicked.connect(self.choose_folder)
+        self.ui.audio_download.clicked.connect(self.get_audio)
+        self.ui.video_download.clicked.connect(self.get_video)
 
     def get_default_download_folder(self):                
         user_folder = os.getenv("USERPROFILE")
@@ -57,13 +59,21 @@ class Downloader(QWidget):
         if self.temp_file_path:
             with open(self.temp_file_path, 'w') as file:
                 file.write(folder_path)
-
-    # def sample(self):
-    #     yt = YouTube('http://youtube.com/watch?v=2lAe1cqCOXo')
-    #     yd = yt.streams.filter(only_audio=True)
-    #     print(yd)
-    #     yd.download(r'C:\Users\XBOPb\Desktop\New folder')
+            
+    def get_audio(self):
+        link = self.ui.link_field.toPlainText()
+        video = YouTube(link)
+        streams = video.streams.filter(type="audio")
+        stream = streams[-1]
+        stream.download(self.folder)
     
+    def get_video(self):
+        link = self.ui.link_field.toPlainText()
+        video = YouTube(link)
+        stream = video.streams.filter(progressive=True).get_highest_resolution()
+        stream.download(self.folder)
+
+
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
