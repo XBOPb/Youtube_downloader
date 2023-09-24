@@ -62,6 +62,8 @@ class Downloader(QWidget):
             
     def get_audio(self):
         link = self.ui.link_field.toPlainText()
+        if not self.link:
+            return
         video = YouTube(link)
         streams = video.streams.filter(type="audio")
         stream = streams[-1]
@@ -69,6 +71,8 @@ class Downloader(QWidget):
     
     def get_video(self):
         link = self.ui.link_field.toPlainText()
+        if not self.link:
+            return
         video = YouTube(link)
         stream = video.streams.filter(progressive=True).get_highest_resolution()
         stream.download(self.folder)
